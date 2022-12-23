@@ -4,6 +4,7 @@ import {
 import Root from "./root";
 import ErrorPage from "../pages/error-page";
 import ContactPage from "../pages/contact-page";
+import HooksPage from "../pages/hooks-page";
 
 const routes = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const routes = createBrowserRouter([
             {
                 path: "/contacts",
                 element: <ContactPage/>,
+            },
+            {
+                path: "/hooks",
+                element: <HooksPage/>,
             }
         ]
     },

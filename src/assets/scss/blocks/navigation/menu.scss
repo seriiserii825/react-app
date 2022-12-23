@@ -9,5 +9,9 @@
     background: #fff;
     border: 1px solid $accent;
     transition: all .4s;
+    &.active {
+      background: $accent;
+      color: #fff;
+    }
   }
 }

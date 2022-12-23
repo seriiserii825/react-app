@@ -1,4 +1,4 @@
-import {Link, Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 
 export default function Root() {
     return (
@@ -6,10 +6,13 @@ export default function Root() {
             <header className={"header"}>
                 <ul className={"menu"}>
                     <li>
-                        <Link to={"/"}>Home</Link>
+                        <NavLink to={"/"}>Home</NavLink>
                     </li>
                     <li>
-                        <Link to={"/contacts"}>Contact</Link>
+                        <NavLink to={"/hooks"}>Hooks</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"/contacts"}>Contact</NavLink>
                     </li>
                 </ul>
             </header>

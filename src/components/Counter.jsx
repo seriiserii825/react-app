@@ -9,7 +9,7 @@ function Counter() {
     }
 
     function decrement() {
-        if (count > 0) {
+        if (count > 2) {
             setCount(count - 1);
         }
     }

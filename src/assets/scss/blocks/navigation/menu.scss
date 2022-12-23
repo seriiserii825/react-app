@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    display: block;
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid $accent;
+    transition: all .4s;
+  }
+}

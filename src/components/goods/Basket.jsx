@@ -1,6 +1,6 @@
 import BasketItem from "./BasketItem";
 
-const Basket = ({ orders, toggleBasket }) => {
+const Basket = ({ orders, toggleBasket, removeBasketItem }) => {
   function handleBasketShow() {
     toggleBasket();
   }
@@ -17,7 +17,7 @@ const Basket = ({ orders, toggleBasket }) => {
         </i>
         <li className="collection-item active">basket</li>
         {orders.length ? (
-          orders.map((order) => <BasketItem key={order.id} {...order} />)
+          orders.map((order) => <BasketItem key={order.id} {...order} removeBasketItem={removeBasketItem} />)
         ) : (
           <li className="collection-item">No items founded...</li>
         )}

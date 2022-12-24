@@ -27,6 +27,9 @@ const GoodsPage = () => {
   function toggleBasket() {
     setIsBasketShow(!isBasketShow);
   }
+  function removeBasketItem(id) {
+    setOrders(orders.filter((order) => order.id !== id));
+  }
   useEffect(function getGoods() {
     setLoading(true);
     fetch(APP_URL, {
@@ -54,7 +57,7 @@ const GoodsPage = () => {
         )}
         <Cart toggleBasket={toggleBasket} quantity={orders.length} />
       </div>
-      {isBasketShow && <Basket orders={orders} toggleBasket={toggleBasket} />}
+      {isBasketShow && <Basket orders={orders} toggleBasket={toggleBasket} removeBasketItem={removeBasketItem} />}
     </div>
   );
 };

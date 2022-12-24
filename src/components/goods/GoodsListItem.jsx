@@ -12,6 +12,7 @@ const GoodsListItem = (props) => {
       id: props.mainId,
       name: displayName,
       price: regularPrice,
+      image: url,
       quantity: 1,
     });
   }
@@ -28,7 +29,7 @@ const GoodsListItem = (props) => {
         <button onClick={() => handleClick()} className="btn">
           Buy
         </button>
-        <strong className="right">{regularPrice}</strong>
+        <strong className="right">{regularPrice} &euro;</strong>
       </div>
     </div>
   );

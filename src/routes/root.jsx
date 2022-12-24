@@ -13,6 +13,9 @@ export default function Root() {
               <NavLink to={"/hooks"}>Hooks</NavLink>
             </li>
             <li>
+              <NavLink to={"/counter"}>Counter</NavLink>
+            </li>
+            <li>
               <NavLink to={"/todos"}>Todos</NavLink>
             </li>
           </ul>
@@ -21,11 +24,11 @@ export default function Root() {
       <div className="main">
         <Outlet />
       </div>
-      <footer class="page-footer">
-        <div class="footer-copyright">
-          <div class="container">
+      <footer className="page-footer">
+        <div className="footer-copyright">
+          <div className="container">
             © 2022 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">
+            <a className="grey-text text-lighten-4 right" href="#!">
               More Links
             </a>
           </div>

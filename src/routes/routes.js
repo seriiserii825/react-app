@@ -6,6 +6,7 @@ import ErrorPage from "../pages/error-page";
 import ContactPage from "../pages/contact-page";
 import HooksPage from "../pages/hooks-page";
 import Todos from "../components/todos/Todos";
+import CounterPage from "../pages/page-counter";
 
 const routes = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const routes = createBrowserRouter([
             {
                 path: "/contacts",
                 element: <ContactPage/>,
+            },
+            {
+                path: "/counter",
+              element: <CounterPage/>,
             },
             {
                 path: "/hooks",

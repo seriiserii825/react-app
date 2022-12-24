@@ -1,16 +1,8 @@
 .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   a {
-    display: block;
-    margin: 0 1rem;
-    padding: 1rem 2rem;
-    background: #fff;
-    border: 1px solid $accent;
-    transition: all .4s;
+    font-size: 2rem;
     &.active {
-      background: $accent;
+      background: darken($accent, 20%);
       color: #fff;
     }
   }

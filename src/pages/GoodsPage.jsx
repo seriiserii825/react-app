@@ -10,6 +10,7 @@ const GoodsPage = () => {
   const [loading, setLoading] = useState(false);
   const [orders, setOrders] = useState([]);
   const [isBasketShow, setIsBasketShow] = useState(false);
+  const [error, setError] = useState(null);
   function updateCart(item) {
     const itemIndex = orders.findIndex((order) => order.id === item.id);
     if (itemIndex < 0) {
@@ -43,6 +44,11 @@ const GoodsPage = () => {
         setTimeout(() => {
           setLoading(false);
         }, 1000);
+      })
+      .catch((error) => {
+        setError("Access token is invalid");
+        console.log(error, "error");
+        setLoading(false);
       });
   }, []);
 
@@ -52,12 +58,20 @@ const GoodsPage = () => {
         <h2>Goods</h2>
         {loading ? (
           <Preloader />
+        ) : error ? (
+          <h3 className="center red-text">{error}</h3>
         ) : (
           <GoodsList updateCart={updateCart} goods={goods} />
         )}
         <Cart toggleBasket={toggleBasket} quantity={orders.length} />
       </div>
-      {isBasketShow && <Basket orders={orders} toggleBasket={toggleBasket} removeBasketItem={removeBasketItem} />}
+      {isBasketShow && (
+        <Basket
+          orders={orders}
+          toggleBasket={toggleBasket}
+          removeBasketItem={removeBasketItem}
+        />
+      )}
     </div>
   );
 };

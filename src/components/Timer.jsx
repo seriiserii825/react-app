@@ -1,45 +1,79 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
+import timer_vars from "../reducer_vars/timer_vars";
 
 function getTimerFromLocalStorage() {
   const timer = localStorage.getItem("timer");
-  if (timer) {
+  if (timer && timer !== "undefined") {
     return +JSON.parse(timer);
   }
   return 0;
 }
 
+const {
+  TIMER_START,
+  TIMER_STOP,
+  TIMER_RESET,
+  TIMER_FROM_LOCAL_STORAGE,
+  TIMER_UPDATE,
+} = timer_vars;
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case TIMER_START:
+      return {
+        ...state,
+        isCounting: true,
+      };
+    case TIMER_STOP:
+      return {
+        ...state,
+        isCounting: false,
+      };
+    case TIMER_RESET:
+      return {
+        ...state,
+        isCounting: false,
+        count: 0,
+      };
+    case TIMER_FROM_LOCAL_STORAGE:
+      return {
+        ...state,
+        count: getTimerFromLocalStorage(),
+      };
+    case TIMER_UPDATE:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    default:
+      return state;
+  }
+};
+
 export default function Timer() {
-  const [count, setCount] = useState(getTimerFromLocalStorage());
-  const [isCounting, setIsCounting] = useState(false);
+  const [{ count, isCounting }, dispatch] = useReducer(reducer, {
+    count: getTimerFromLocalStorage(),
+    isCounting: false,
+  });
 
   const timerRef = useRef(null);
 
-  // componentDidMount() {
-  //   const userCount = localStorage.getItem("count");
-  //   if (userCount) setState({ count: +userCount });
-  // }
-
-  // componentDidUpdate() {
-  //   localStorage.setItem("count", state.count);
-  // }
-
   const handleReset = () => {
-    setCount(0);
-    setIsCounting(false);
+    dispatch({ type: TIMER_RESET });
   };
 
   const handleStart = () => {
-    setIsCounting(true);
+    dispatch({ type: TIMER_START });
   };
 
   const handleStop = () => {
-    setIsCounting(false);
+    dispatch({ type: TIMER_STOP });
   };
 
   useEffect(() => {
     if (isCounting) {
       timerRef.current = setInterval(() => {
-        setCount((prevCount) => prevCount + 1);
+        dispatch({ type: TIMER_UPDATE });
       }, 1000);
     }
     return () => {

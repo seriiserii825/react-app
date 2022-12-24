@@ -1,0 +1,10 @@
+.cart {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  display: flex;
+  padding: 1rem;
+  color: white;
+  background: $accent;
+  z-index: 100;
+}

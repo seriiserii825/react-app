@@ -108,3 +108,8 @@ a {
 .page-footer {
   padding-top: 0;
 }
+.btn {
+  &:active {
+    transform: scale(0.95);
+  }
+}

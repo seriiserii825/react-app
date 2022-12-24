@@ -6,6 +6,7 @@ import HooksPage from "../pages/hooks-page";
 import Todos from "../components/todos/Todos";
 import CounterPage from "../pages/page-counter";
 import PageReducer from "../pages/PageReducer";
+import GoodsPage from "../pages/GoodsPage";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
       {
         path: "/reducer",
         element: <PageReducer />,
+      },
+      {
+        path: "/goods",
+        element: <GoodsPage />,
       },
       {
         path: "/todos",

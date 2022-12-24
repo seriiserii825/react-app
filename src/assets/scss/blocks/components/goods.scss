@@ -1,0 +1,15 @@
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2rem;
+  padding: 6rem 0;
+  .card {
+    margin: 0 2rem 2rem;
+    flex-basis: calc(100% / 4 - 4rem);
+    display: flex;
+    flex-direction: column;
+    .card-content {
+      flex-grow: 1;
+    }
+  }
+}

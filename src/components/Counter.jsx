@@ -1,23 +1,39 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
+
+const reducerVars = {
+  INCREMENT: "INCREMENT",
+  DECREMENT: "DECREMENT",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case reducerVars.INCREMENT:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    case reducerVars.DECREMENT:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+    default:
+      return state;
+  }
+};
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [{ count }, dispatch] = React.useReducer(reducer, { count: 0 });
 
   function increment() {
-    setCount(count + 1);
+    dispatch({ type: reducerVars.INCREMENT });
   }
 
   function decrement() {
     if (count > 2) {
-      setCount(count - 1);
+      dispatch({ type: reducerVars.DECREMENT });
     }
   }
-
-  useEffect(() => {
-    // console.log("show counter");
-    return () => console.log("hide counter");
-  }, [count]);
 
   return (
     <div className={"counter"}>

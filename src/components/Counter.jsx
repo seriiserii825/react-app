@@ -15,7 +15,7 @@ function Counter() {
   }
 
   useEffect(() => {
-    console.log("show counter");
+    // console.log("show counter");
     return () => console.log("hide counter");
   }, [count]);
 

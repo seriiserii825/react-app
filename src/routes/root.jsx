@@ -16,6 +16,9 @@ export default function Root() {
               <NavLink to={"/counter"}>Counter</NavLink>
             </li>
             <li>
+              <NavLink to={"/reducer"}>Use Reducer</NavLink>
+            </li>
+            <li>
               <NavLink to={"/todos"}>Todos</NavLink>
             </li>
           </ul>

@@ -3,6 +3,7 @@ import Basket from "../components/goods/Basket";
 import Cart from "../components/goods/Cart";
 import GoodsList from "../components/goods/GoodsList";
 import Preloader from "../components/UI/Preloader";
+import Toast from "../components/UI/Toast";
 import { APP_KEY, APP_URL } from "../config";
 
 const GoodsPage = () => {
@@ -11,6 +12,7 @@ const GoodsPage = () => {
   const [orders, setOrders] = useState([]);
   const [isBasketShow, setIsBasketShow] = useState(false);
   const [error, setError] = useState(null);
+  const [toast, setToast] = useState("");
   function updateCart(item) {
     const itemIndex = orders.findIndex((order) => order.id === item.id);
     if (itemIndex < 0) {
@@ -24,12 +26,16 @@ const GoodsPage = () => {
       newOrders[itemIndex].quantity++;
       setOrders(newOrders);
     }
+    setToast(`Product ${item.name} has added to cart...`);
   }
   function toggleBasket() {
     setIsBasketShow(!isBasketShow);
   }
   function removeBasketItem(id) {
     setOrders(orders.filter((order) => order.id !== id));
+  }
+  function closeToast() {
+    setToast("");
   }
   useEffect(function getGoods() {
     setLoading(true);
@@ -72,6 +78,7 @@ const GoodsPage = () => {
           removeBasketItem={removeBasketItem}
         />
       )}
+      {toast !== "" && <Toast message={toast} closeAlert={closeToast} />}
     </div>
   );
 };

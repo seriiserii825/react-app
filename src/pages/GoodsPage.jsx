@@ -1,41 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Basket from "../components/goods/Basket";
 import Cart from "../components/goods/Cart";
 import GoodsList from "../components/goods/GoodsList";
 import Preloader from "../components/UI/Preloader";
 import Toast from "../components/UI/Toast";
 import { APP_KEY, APP_URL } from "../config";
+import { ShopContext } from "../context/Context";
 
 const GoodsPage = () => {
-  const [goods, setGoods] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [orders, setOrders] = useState([]);
-  const [isBasketShow, setIsBasketShow] = useState(false);
+  const { toast, goods, setGoods, loading, setLoading, setIsBasketShow, isBasketShow } = useContext(ShopContext);
   const [error, setError] = useState(null);
-  const [toast, setToast] = useState("");
-  function updateCart(item) {
-    const itemIndex = orders.findIndex((order) => order.id === item.id);
-    if (itemIndex < 0) {
-      const newItem = {
-        ...item,
-        quantity: 1,
-      };
-      setOrders([...orders, newItem]);
-    } else {
-      const newOrders = [...orders];
-      newOrders[itemIndex].quantity++;
-      setOrders(newOrders);
-    }
-    setToast(`Product ${item.name} has added to cart...`);
-  }
   function toggleBasket() {
     setIsBasketShow(!isBasketShow);
-  }
-  function removeBasketItem(id) {
-    setOrders(orders.filter((order) => order.id !== id));
-  }
-  function closeToast() {
-    setToast("");
   }
   useEffect(function getGoods() {
     setLoading(true);
@@ -67,18 +43,14 @@ const GoodsPage = () => {
         ) : error ? (
           <h3 className="center red-text">{error}</h3>
         ) : (
-          <GoodsList updateCart={updateCart} goods={goods} />
+          <GoodsList goods={goods} />
         )}
-        <Cart toggleBasket={toggleBasket} quantity={orders.length} />
+        <Cart toggleBasket={toggleBasket} />
       </div>
       {isBasketShow && (
-        <Basket
-          orders={orders}
-          toggleBasket={toggleBasket}
-          removeBasketItem={removeBasketItem}
-        />
+        <Basket />
       )}
-      {toast !== "" && <Toast message={toast} closeAlert={closeToast} />}
+      {toast !== "" && <Toast message={toast} />}
     </div>
   );
 };

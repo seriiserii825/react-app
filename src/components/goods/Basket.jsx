@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { ShopContext } from "../../context/Context";
 import BasketItem from "./BasketItem";
 
-const Basket = ({ orders, toggleBasket, removeBasketItem }) => {
+const Basket = () => {
+  const { setIsBasketShow, orders } = useContext(ShopContext);
   function handleBasketShow() {
-    toggleBasket();
+    setIsBasketShow(false);
   }
-  function totalPrice(){
+  function totalPrice() {
     return orders.reduce((sum, order) => {
       return sum + order.price * order.quantity;
     }, 0);
@@ -17,11 +20,13 @@ const Basket = ({ orders, toggleBasket, removeBasketItem }) => {
         </i>
         <li className="collection-item active">basket</li>
         {orders.length ? (
-          orders.map((order) => <BasketItem key={order.id} {...order} removeBasketItem={removeBasketItem} />)
+          orders.map((order) => <BasketItem key={order.id} {...order} />)
         ) : (
           <li className="collection-item">No items founded...</li>
         )}
-        <li className="collection-item active">Total price: {totalPrice()} &euro;</li>
+        <li className="collection-item active">
+          Total price: {totalPrice()} &euro;
+        </li>
       </ul>
     </div>
   );

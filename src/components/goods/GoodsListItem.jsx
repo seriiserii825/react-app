@@ -1,15 +1,19 @@
+import {useContext} from "react";
+import {ShopContext} from "../../context/Context";
+
 const GoodsListItem = (props) => {
+  const {updateCart} = useContext(ShopContext);
   const {
+    mainId,
     displayName,
     displayAssets,
     displayDescription,
     price: { regularPrice },
-    updateCart,
   } = props;
   const url = displayAssets[0].background;
   function handleClick() {
     updateCart({
-      id: props.mainId,
+      id: mainId,
       name: displayName,
       price: regularPrice,
       image: url,

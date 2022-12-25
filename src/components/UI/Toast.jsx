@@ -1,16 +1,23 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ShopContext } from "../../context/Context";
 
-const Toast = ({ message, closeAlert }) => {
+const Toast = ({ message }) => {
+  const { closeAlert } = useContext(ShopContext);
   useEffect(() => {
     const timerId = setTimeout(() => {
       closeAlert();
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timerId);
   }, [message, closeAlert]);
 
   return (
     <div id="toast-container">
-      <div style={{fontSize: '1.8rem', background: `green`}} class="toast panning">{message}</div>
+      <div
+        style={{ fontSize: "1.8rem", background: `green` }}
+        className="toast panning"
+      >
+        {message}
+      </div>
     </div>
   );
 };

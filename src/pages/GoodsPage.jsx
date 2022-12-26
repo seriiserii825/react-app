@@ -8,7 +8,15 @@ import { APP_KEY, APP_URL } from "../config";
 import { ShopContext } from "../context/Context";
 
 const GoodsPage = () => {
-  const { toast, goods, setGoods, loading, setLoading, setIsBasketShow, isBasketShow } = useContext(ShopContext);
+  const {
+    toast,
+    goods,
+    setGoods,
+    loading,
+    setLoading,
+    setIsBasketShow,
+    isBasketShow,
+  } = useContext(ShopContext);
   const [error, setError] = useState(null);
   function toggleBasket() {
     setIsBasketShow(!isBasketShow);
@@ -32,6 +40,7 @@ const GoodsPage = () => {
         console.log(error, "error");
         setLoading(false);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -47,9 +56,7 @@ const GoodsPage = () => {
         )}
         <Cart toggleBasket={toggleBasket} />
       </div>
-      {isBasketShow && (
-        <Basket />
-      )}
+      {isBasketShow && <Basket />}
       {toast !== "" && <Toast message={toast} />}
     </div>
   );

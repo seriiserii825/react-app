@@ -20,7 +20,7 @@ body {
   position: relative;
   margin: 0;
   font-family: Montserrat, sans-serif;
-  font-size: 2rem;
+  font-size: 2rem !important;
   color: $text-color;
   background: lightgray;
   &::after {
@@ -115,4 +115,7 @@ a {
 }
 strong {
   font-weight: bold;
+}
+.modal {
+  display: block;
 }

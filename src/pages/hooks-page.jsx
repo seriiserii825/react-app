@@ -1,11 +1,10 @@
-// import Counter from '../components/Counter';
-import UseEffectComponent from '../components/hooks/UseEffectComponent';
+import UseReducer from '../components/hooks/UseReducer';
 
 export default function HooksPage() {
 	return (
 		<div className="container">
 			{/* <Counter/> */}
-			<UseEffectComponent />
+			<UseReducer />
 		</div>
 	);
 }

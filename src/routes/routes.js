@@ -9,6 +9,7 @@ import PageReducer from '../pages/PageReducer';
 import GoodsPage from '../pages/GoodsPage';
 import BirthdayReminderPage from '../pages/BirthdayReminderPage';
 import HomePage from '../pages/HomePage';
+import Tours from '../pages/ToursPage';
 
 const routes = createBrowserRouter([
 	{
@@ -47,6 +48,10 @@ const routes = createBrowserRouter([
 			{
 				path: '/birthday-reminder',
 				element: <BirthdayReminderPage />,
+			},
+			{
+				path: '/tours',
+				element: <Tours />,
 			},
 		],
 	},

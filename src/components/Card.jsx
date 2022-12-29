@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Card({ title, image, description, url }) {
+export default function Card({ title, image, description, url, background }) {
 	return (
-		<div className="card">
+		<div className="card" style={{background: background}}>
 			<div className="card-image waves-effect waves-block waves-light">
 				<img className="activator" src={image} alt="" />
 			</div>

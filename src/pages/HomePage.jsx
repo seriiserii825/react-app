@@ -6,7 +6,7 @@ export default function HomePage() {
 		<>
 			<div className="home-list">
 				<div className="home-list__item">
-          <Card title="Birthday reminder" image="https://unsplash.it/800/800" description={'A list of birthdays, that can be deleted'} url={'/birthday-reminder'}/>
+          <Card title="Birthday reminder" image="/images/birthdays-reminder.jpg" description={'A list of birthdays, that can be deleted'} url={'/birthday-reminder'}/>
 				</div>
 			</div>
 		</>

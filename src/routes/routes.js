@@ -11,6 +11,7 @@ import BirthdayReminderPage from '../pages/BirthdayReminderPage';
 import HomePage from '../pages/HomePage';
 import Tours from '../pages/ToursPage';
 import Review from '../pages/ReviewsPage';
+import AccordeonPage from '../pages/AccordeonPage';
 
 const routes = createBrowserRouter([
 	{
@@ -57,6 +58,10 @@ const routes = createBrowserRouter([
 			{
 				path: '/reviews',
 				element: <Review />,
+			},
+			{
+				path: '/accordeon',
+				element: <AccordeonPage />,
 			},
 		],
 	},

@@ -1,0 +1,10 @@
+.home-list {
+  display: flex;
+  margin: -2rem auto;
+  max-width: 1400px;
+  padding: 10rem 2rem;
+  &__item {
+    margin: 0 2rem 4rem;
+    flex: 0 0 calc(33.3333% - 4rem);
+  }
+}

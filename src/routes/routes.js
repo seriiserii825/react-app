@@ -10,6 +10,7 @@ import GoodsPage from '../pages/GoodsPage';
 import BirthdayReminderPage from '../pages/BirthdayReminderPage';
 import HomePage from '../pages/HomePage';
 import Tours from '../pages/ToursPage';
+import Review from '../pages/ReviewsPage';
 
 const routes = createBrowserRouter([
 	{
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
 			{
 				path: '/tours',
 				element: <Tours />,
+			},
+			{
+				path: '/reviews',
+				element: <Review />,
 			},
 		],
 	},

@@ -18,8 +18,17 @@ export default function HomePage() {
 					<Card
 						title="Tours"
 						image="/images/tours.jpg"
-						description={'A list of birthdays, that can be deleted'}
+						description={'A list of tours with delete event and refresh'}
 						url={'/tours'}
+						background={'hsl(205, 90%, 76%)'}
+					/>
+				</div>
+				<div className="home-list__item">
+					<Card
+						title="Reviews"
+						image="/images/tours.jpg"
+						description={'A list of birthdays, that can be deleted'}
+						url={'/reviews'}
 						background={'hsl(205, 90%, 76%)'}
 					/>
 				</div>

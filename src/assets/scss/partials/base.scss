@@ -131,3 +131,7 @@ strong {
 		object-fit: cover;
 	}
 }
+button:focus {
+	outline: none;
+	background: transparent;
+}

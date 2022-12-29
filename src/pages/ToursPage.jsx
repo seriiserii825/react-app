@@ -66,15 +66,14 @@ export default function ToursPage() {
 				</div>
 			</div>
 		);
-	} else {
-		return (
-			<div className="main" style={{ background: 'hsl(205, 90%, 76%)' }}>
-				<div className={style.tours}>
-					<button className="btn" onClick={() => fetchTours()}>
-						Refresh all
-					</button>
-				</div>
-			</div>
-		);
 	}
+	return (
+		<div className="main" style={{ background: 'hsl(205, 90%, 76%)' }}>
+			<div className={style.tours}>
+				<button className="btn" onClick={() => fetchTours()}>
+					Refresh all
+				</button>
+			</div>
+		</div>
+	);
 }

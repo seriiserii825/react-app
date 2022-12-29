@@ -26,10 +26,10 @@ export default function HomePage() {
 				<div className="home-list__item">
 					<Card
 						title="Reviews"
-						image="/images/tours.jpg"
+						image="/images/reviews.jpg"
 						description={'A list of birthdays, that can be deleted'}
 						url={'/reviews'}
-						background={'hsl(205, 90%, 76%)'}
+						background={'#8DE969'}
 					/>
 				</div>
 			</div>

@@ -35,7 +35,7 @@ const Review = () => {
 
 	return (
 		<>
-			<main className="reviews__main">
+			<main style={{background: '#8DE969'}} className="main">
 				<div className="reviews__section">
 					<section className="reviews__container">
 						<div className="reviews__title">

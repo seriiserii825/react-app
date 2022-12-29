@@ -78,16 +78,6 @@ Global Styles
 	margin-top: 2rem;
 	font-size: 1.2rem;
 }
-/*
-===============
-Tours
-===============
-*/
-main {
-	width: 90vw;
-	max-width: var(--fixed-width);
-	margin: 5rem auto;
-}
 .tours {
 	display: flex;
 	justify-content: center;

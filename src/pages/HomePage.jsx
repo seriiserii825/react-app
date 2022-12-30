@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../components/Card';
+import colors from '../projects/color-config';
 
 export default function HomePage() {
 	return (
@@ -18,7 +19,9 @@ export default function HomePage() {
 					<Card
 						title="Tours"
 						image="/images/tours.jpg"
-						description={'A list of tours with delete event and refresh'}
+						description={
+							'A list of tours with delete event and refresh'
+						}
 						url={'/tours'}
 						background={'hsl(205, 90%, 76%)'}
 					/>
@@ -30,6 +33,15 @@ export default function HomePage() {
 						description={'A list of birthdays, that can be deleted'}
 						url={'/reviews'}
 						background={'#8DE969'}
+					/>
+				</div>
+				<div className="home-list__item">
+					<Card
+						title="Menu"
+						image="/images/reviews.jpg"
+						description={'A list of birthdays, that can be deleted'}
+						url={'/menu'}
+						background={colors.menu}
 					/>
 				</div>
 			</div>

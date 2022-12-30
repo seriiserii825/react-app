@@ -1,0 +1,19 @@
+.section-header {
+	position: relative;
+	display: table;
+	margin: 0 auto 4rem;
+	&__after {
+		position: absolute;
+		bottom: -1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50%;
+		height: 5px;
+	}
+	&__title {
+		font-size: 4rem;
+		font-weight: 700;
+		text-align: center;
+		color: black;
+	}
+}

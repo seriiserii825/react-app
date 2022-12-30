@@ -1,6 +1,12 @@
 import React from 'react';
 import Card from '../components/Card';
-import colors from '../projects/color-config';
+import {
+	birthday_colors,
+	tours_colors,
+	reviews_colors,
+	menu_colors,
+	accordeon_colors,
+} from '../projects/color-config';
 
 export default function HomePage() {
 	return (
@@ -12,7 +18,8 @@ export default function HomePage() {
 						image="/images/birthdays-reminder.jpg"
 						description={'A list of birthdays, that can be deleted'}
 						url={'/birthday-reminder'}
-						background={'pink'}
+						color={birthday_colors.color}
+						background={birthday_colors.background}
 					/>
 				</div>
 				<div className="home-list__item">
@@ -23,7 +30,7 @@ export default function HomePage() {
 							'A list of tours with delete event and refresh'
 						}
 						url={'/tours'}
-						background={'hsl(205, 90%, 76%)'}
+						background={tours_colors.background}
 					/>
 				</div>
 				<div className="home-list__item">
@@ -32,7 +39,7 @@ export default function HomePage() {
 						image="/images/reviews.jpg"
 						description={'Rreviews slider with random button'}
 						url={'/reviews'}
-						background={'#8DE969'}
+						background={reviews_colors.background}
 					/>
 				</div>
 				<div className="home-list__item">
@@ -41,7 +48,7 @@ export default function HomePage() {
 						image="/images/reviews.jpg"
 						description={'A list of birthdays, that can be deleted'}
 						url={'/menu'}
-						background={colors.menu}
+						background={menu_colors.background}
 					/>
 				</div>
 				<div className="home-list__item">
@@ -50,12 +57,10 @@ export default function HomePage() {
 						image="/images/accordeon.jpg"
 						description={'A simple accordeon with questions'}
 						url={'/accordeon'}
-						background={'#e9d8a6'}
+						background={accordeon_colors.background}
 					/>
 				</div>
 			</div>
 		</>
 	);
 }
-
-//TODO: added bg component

@@ -52,6 +52,7 @@ Global Styles
 .reviews {
 	&__section {
 		width: 90vw;
+		min-height: 100vh;
 		margin: 0 auto;
 		padding: 6rem 0;
 		max-width: var(--max-width);

@@ -18,3 +18,8 @@ export const accordeon_colors = {
 	color: 'red',
 	background: '#e9d8a6',
 };
+
+export const tabs_colors = {
+	color: 'red',
+	background: '#b2dfdb',
+};

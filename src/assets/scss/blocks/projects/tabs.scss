@@ -1,0 +1,63 @@
+.tabs-component {
+	padding-top: 4rem;
+	&__wrap {
+		display: flex;
+	}
+	&__sidebar {
+		flex: 0 0 30rem;
+	}
+	&__content {
+		flex: 1;
+		padding-left: 4rem;
+	}
+	&__title {
+		margin-bottom: 1rem;
+	}
+	&__job {
+		display: inline-block;
+		margin-bottom: 1rem;
+		padding: 0.4rem 2rem;
+		background: rgba(0, 128, 0, 0.26);
+		border-radius: 0.3rem;
+	}
+	&__date {
+		margin-bottom: 3rem;
+		text-transform: uppercase;
+		color: #666;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2rem;
+		padding-left: 1rem;
+		font-size: 1.5rem;
+		i {
+			display: inline-block;
+			margin-right: 3rem;
+		}
+	}
+	&__sidebar {
+		li {
+			position: relative;
+			font-size: 3rem;
+			font-weight: bold;
+			cursor: pointer;
+			transition: all 0.4s;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: transparent;
+			}
+			&.active {
+				color: rgba(0, 128, 0, 0.26);
+				&::before {
+					background: rgba(0, 128, 0, 0.26);
+				}
+			}
+		}
+	}
+}

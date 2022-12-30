@@ -13,6 +13,7 @@ import Tours from '../pages/ToursPage';
 import Review from '../pages/ReviewsPage';
 import MenuPage from '../pages/MenuPage';
 import AccordeonPage from '../pages/AccordeonPage';
+import TabsPage from '../pages/TabsPage';
 
 const routes = createBrowserRouter([
 	{
@@ -67,6 +68,10 @@ const routes = createBrowserRouter([
 			{
 				path: '/menu',
 				element: <MenuPage />,
+			},
+			{
+				path: '/tabs',
+				element: <TabsPage />,
 			},
 		],
 	},

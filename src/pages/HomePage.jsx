@@ -6,6 +6,7 @@ import {
 	reviews_colors,
 	menu_colors,
 	accordeon_colors,
+	tabs_colors,
 } from '../projects/color-config';
 
 export default function HomePage() {
@@ -58,6 +59,15 @@ export default function HomePage() {
 						description={'A simple accordeon with questions'}
 						url={'/accordeon'}
 						background={accordeon_colors.background}
+					/>
+				</div>
+				<div className="home-list__item">
+					<Card
+						title="Tabs"
+						image="/images/accordeon.jpg"
+						description={'Experience tabs'}
+						url={'/tabs'}
+						background={tabs_colors.background}
 					/>
 				</div>
 			</div>

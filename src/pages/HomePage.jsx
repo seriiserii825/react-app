@@ -30,7 +30,7 @@ export default function HomePage() {
 					<Card
 						title="Reviews"
 						image="/images/reviews.jpg"
-						description={'A list of birthdays, that can be deleted'}
+						description={'Rreviews slider with random button'}
 						url={'/reviews'}
 						background={'#8DE969'}
 					/>
@@ -42,6 +42,15 @@ export default function HomePage() {
 						description={'A list of birthdays, that can be deleted'}
 						url={'/menu'}
 						background={colors.menu}
+					/>
+				</div>
+				<div className="home-list__item">
+					<Card
+						title="Accordeon"
+						image="/images/accordeon.jpg"
+						description={'A simple accordeon with questions'}
+						url={'/accordeon'}
+						background={'#e9d8a6'}
 					/>
 				</div>
 			</div>

@@ -14,6 +14,7 @@ import Review from '../pages/ReviewsPage';
 import MenuPage from '../pages/MenuPage';
 import AccordeonPage from '../pages/AccordeonPage';
 import TabsPage from '../pages/TabsPage';
+import LoremIpsum from '../components/lorem-ipsum/LoremIpsum';
 
 const routes = createBrowserRouter([
 	{
@@ -72,6 +73,10 @@ const routes = createBrowserRouter([
 			{
 				path: '/tabs',
 				element: <TabsPage />,
+			},
+			{
+				path: '/lorem',
+				element: <LoremIpsum />,
 			},
 		],
 	},

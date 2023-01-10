@@ -23,3 +23,8 @@ export const tabs_colors = {
 	color: 'red',
 	background: '#b2dfdb',
 };
+
+export const lorem_colors = {
+	color: 'red',
+	background: '#cad2c5',
+};

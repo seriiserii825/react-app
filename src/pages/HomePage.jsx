@@ -46,7 +46,7 @@ export default function HomePage() {
 				<div className="home-list__item">
 					<Card
 						title="Menu"
-						image="/images/reviews.jpg"
+						image="/images/menu.jpg"
 						description={'A list of birthdays, that can be deleted'}
 						url={'/menu'}
 						background={menu_colors.background}
@@ -64,7 +64,7 @@ export default function HomePage() {
 				<div className="home-list__item">
 					<Card
 						title="Tabs"
-						image="/images/accordeon.jpg"
+						image="/images/tabs.jpg"
 						description={'Experience tabs'}
 						url={'/tabs'}
 						background={tabs_colors.background}

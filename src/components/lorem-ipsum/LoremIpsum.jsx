@@ -4,14 +4,15 @@ import { items } from "./data";
 const checkboxes = [
   { name: "Title", checked: true },
   { name: "Subtitle", checked: false },
-  { name: "Text", checked: true },
+  { name: "Text", checked: false },
   { name: "Date", checked: false },
 ];
 
 function LoremIpsum() {
   const [filter, setFilter] = useState(checkboxes);
-  const [search, setSearch] = useState("8");
+  const [search, setSearch] = useState("1");
   const [posts, setPosts] = useState(items);
+  const [is_visible_posts, setIsVisiblePosts] = useState(false);
 
   function handleCheckboxChange(e) {
     const { name, checked } = e.target;
@@ -22,7 +23,16 @@ function LoremIpsum() {
   }
 
   function onSubmit() {
-    console.log(search, "search");
+    const newPosts = items.slice(0, parseInt(search));
+    setPosts(newPosts);
+    setIsVisiblePosts(true);
+  }
+
+  function copyToClipboard() {
+    const el = document.querySelector("#js-posts");
+    console.log(el, "el");
+    const text = el.outerHTML;
+    navigator.clipboard.writeText(text);
   }
 
   return (
@@ -57,22 +67,36 @@ function LoremIpsum() {
             </label>
           );
         })}
-        <button className="btn mt4" onClick={onSubmit}>
+        <button className="btn mt4 mb4" onClick={onSubmit}>
           Generate
         </button>
+        {is_visible_posts && (
+          <button className="btn ml2 blue darken-3" onClick={copyToClipboard}>
+            {" "}
+            Copy to clipboard{" "}
+          </button>
+        )}
+        {is_visible_posts && (
+          <ul id="js-posts">
+            {posts.map((post) => {
+              return (
+                <li key={post.id} className="mb3">
+                  {filter[0].checked && <h3 className="mb2">{post.title}</h3>}
+                  {filter[1].checked && (
+                    <h4 className="mb2">{post.subtitle}</h4>
+                  )}
+                  {filter[2].checked && <p className="mb2">{post.text}</p>}
+                  {filter[3].checked && (
+                    <p className="mb2">
+                      Posted at: <strong>({post.date})</strong>
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.id}>
-              {filter[0].checked && <h3>{post.title}</h3>}
-              {filter[1].checked && <h4>{post.subtitle}</h4>}
-              {filter[2].checked && <p>{post.text}</p>}
-              {filter[3].checked && <p>{post.date}</p>}
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }

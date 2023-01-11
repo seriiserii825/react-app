@@ -74,7 +74,7 @@ export default function HomePage() {
 				<div className="home-list__item">
 					<Card
 						title="Lorem Ipsum"
-						image="/images/tabs.jpg"
+						image="/images/lorem.jpg"
 						description={'Lorem Ipsum generator'}
 						url={'/lorem'}
 						background={lorem_colors.background}

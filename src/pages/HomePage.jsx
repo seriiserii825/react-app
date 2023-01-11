@@ -7,7 +7,7 @@ import {
 	menu_colors,
 	accordeon_colors,
 	tabs_colors,
-  lorem_colors,
+	lorem_colors,
 } from '../projects/color-config';
 
 export default function HomePage() {
@@ -76,6 +76,15 @@ export default function HomePage() {
 						title="Lorem Ipsum"
 						image="/images/lorem.jpg"
 						description={'Lorem Ipsum generator'}
+						url={'/lorem'}
+						background={lorem_colors.background}
+					/>
+				</div>
+				<div className="home-list__item">
+					<Card
+						title="Color generator"
+						image="/images/lorem.jpg"
+						description={'Generate colors from light to dark'}
 						url={'/lorem'}
 						background={lorem_colors.background}
 					/>
